@@ -1,0 +1,5 @@
+tensorflow==2.15.0
+flask==3.0.2
+numpy==1.26.4
+matplotlib==3.8.2
+pillow==10.2.0
