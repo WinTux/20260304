@@ -9,8 +9,9 @@ entonces es suficiente con
 source venv/bin/activate
 ```
 ## Requisitos
+```bash
 pip install tensorflow flask matplotlib
-
+```
 ### O mucho mejor, ejecutando el comando
 ```bash
 pip install -r requirements.txt
