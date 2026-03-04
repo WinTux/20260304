@@ -18,10 +18,14 @@ pip install -r requirements.txt
 ```
 
 ## Entrenar el modelo
+```bash
 python3 modelo_entrenamiento.py
-
+```
 ## Predecir una imagen
+```bash
 python3 predecir.py
-
+```
 ## Correr la app web
+```bash
 python3 app.py
+```
