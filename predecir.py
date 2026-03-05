@@ -12,7 +12,7 @@ class_names = [
 model = tf.keras.models.load_model("fashion_mnist_cnn.keras")
 
 # Cargar imagen local y preprocesar
-img_path = "/home/rusok/Descargas/ropita.png"
+img_path = "/home/rusok/Descargas/ropita.jpg"
 img = image.load_img(img_path, color_mode="grayscale", target_size=(28,28))
 
 plt.imshow(img, cmap="gray")

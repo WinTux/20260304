@@ -10,7 +10,7 @@ source venv/bin/activate
 ```
 ## Requisitos
 ```bash
-pip install tensorflow flask matplotlib
+pip install tensorflow flask matplotlib scipy
 ```
 ### O mucho mejor, ejecutando el comando
 ```bash

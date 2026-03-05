@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras import layers, models
 import numpy as np
-
+from tensorflow.keras.preprocessing.image import ImageDataGenerator # Para mejorar el entrenamiento, generando imagenes algo rotadas (mejor generalización)
 # Cargar Fashion-MNIST (dataset integrado de Keras)
 fashion_mnist = tf.keras.datasets.fashion_mnist
 (x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
@@ -38,7 +38,17 @@ model.compile(optimizer='adam',
 print(model.summary())
 
 # Entrenar
-model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test))
+# muy simple, para mejorar lo cambio // model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test))
+datagen = ImageDataGenerator(
+    rotation_range=15,
+    zoom_range=0.1,
+    width_shift_range=0.1,
+    height_shift_range=0.1
+)
+
+model.fit(datagen.flow(x_train, y_train, batch_size=32),
+          epochs=15,
+          validation_data=(x_test, y_test))
 
 # Guardar modelo entrenado
 model.save("fashion_mnist_cnn.keras")
